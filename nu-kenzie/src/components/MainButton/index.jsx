@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-export default function MainButton({ value, newClass }) {
+export default function MainButton({ value, newClass, onClicked }) {
   return (
     <>
-      <button className={styles.MainButton + " " + newClass}>{value}</button>
+      <button
+        onClick={onClicked}
+        className={styles.MainButton + " " + newClass}
+      >
+        {value}
+      </button>
     </>
   );
 }

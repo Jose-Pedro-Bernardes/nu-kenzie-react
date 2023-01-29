@@ -8,9 +8,10 @@
 
 .mainContainer {
   width: 988px;
-  height: 100%;
+  min-height: 100%;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -24,17 +25,42 @@
   gap: 35px;
 }
 
+.imgSection {
+  display: none;
+}
+
 .title1 {
   color: var(--grey-4);
   font-size: var(--title-1);
   font-weight: var(--title-1-weight);
   line-height: 48px;
-
-  width: 320px;
+  align-self: center;
+  width: 270px;
   height: 100px;
 }
 
 .mainButton {
   font-size: 16px;
   font-weight: 700;
+  width: 17.063rem;
+}
+
+@media (min-width: 963px) {
+  .imgSection {
+    display: block;
+  }
+
+  .mainContainer {
+    flex-direction: row;
+  }
+
+  .mainButton {
+    align-self: start;
+  }
+
+  .mainButton {
+    font-size: 16px;
+    font-weight: 700;
+    width: 15.063rem;
+  }
 }

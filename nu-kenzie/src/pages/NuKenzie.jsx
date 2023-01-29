@@ -15,7 +15,7 @@ export default function NuKenzie() {
           <h1 className={styles.title1}>
             Centralize o controle das sua finanças
           </h1>
-          <MainButton newClass={styles.mainButton} value="Iniciar"></MainButton>
+          <MainButton newClass={styles.mainButton} value="Iniciar" />
         </section>
         <section className={styles.imgSection}>
           <img
