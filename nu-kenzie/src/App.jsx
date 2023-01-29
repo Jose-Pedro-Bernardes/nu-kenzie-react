@@ -1,9 +1,10 @@
-import MainButton from "./components/MainButton";
+import NuKenzie from "./pages/NuKenzie";
+import "./globalStyles.css";
 
 function App() {
   return (
     <div className="App">
-      <MainButton value="Iniciar"></MainButton>
+      <NuKenzie />
     </div>
   );
 }

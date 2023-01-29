@@ -1,0 +1,40 @@
+.mainAlign {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer {
+  width: 988px;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 50px;
+}
+
+.contentTextSection {
+  display: flex;
+  flex-direction: column;
+
+  gap: 35px;
+}
+
+.title1 {
+  color: var(--grey-4);
+  font-size: var(--title-1);
+  font-weight: var(--title-1-weight);
+  line-height: 48px;
+
+  width: 320px;
+  height: 100px;
+}
+
+.mainButton {
+  font-size: 16px;
+  font-weight: 700;
+}

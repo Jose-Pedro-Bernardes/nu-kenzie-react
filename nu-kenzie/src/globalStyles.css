@@ -1,0 +1,33 @@
+:root {
+  --grey-1: #212529;
+  --grey-2: #868e96;
+  --grey-3: #e9ecef;
+  --grey-4: rgb(255, 255, 255);
+
+  --color-primary: #fd377e;
+  --color-primary-hover: #e34981;
+  --color-secundary: #03b898;
+
+  --title-1: 28px;
+  --title-2: 24px;
+  --title-3: 20px;
+  --title-4: 12px;
+  --headline: 16px;
+  --body: 12px;
+
+  --title-1-weight: 700;
+  --title-2-weight: 700;
+  --title-3-weight: 700;
+  --title-4-weight: 700;
+  --headline-weight: 400;
+  --body-weight: 400;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+.App {
+  background-color: var(--grey-1);
+  height: 100vh;
+}
