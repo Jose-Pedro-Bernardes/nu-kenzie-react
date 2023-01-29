@@ -1,0 +1,18 @@
+.MainButton {
+  width: 15.063rem;
+  height: 3rem;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #fd377e;
+  color: #ffffff;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+.MainButton:hover {
+  background-color: #e34981;
+}
