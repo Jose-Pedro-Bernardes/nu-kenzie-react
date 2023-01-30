@@ -1,10 +1,10 @@
-import React from "react";
-import MainButton from "../components/MainButton";
+import React, { useState } from "react";
+import MainButton from "../../components/MainButton";
 import styles from "./styles.module.css";
 
-export default function NuKenzie() {
+export default function NuKenzie({ setPage }) {
   return (
-    <div className={styles.mainAlign}>
+    <div className={styles.container}>
       <main className={styles.mainContainer}>
         <section className={styles.contentTextSection}>
           <img
@@ -15,7 +15,11 @@ export default function NuKenzie() {
           <h1 className={styles.title1}>
             Centralize o controle das sua finanças
           </h1>
-          <MainButton newClass={styles.mainButton} value="Iniciar" />
+          <MainButton
+            onClicked={() => setPage("DashBoard")}
+            newClass={styles.mainButton}
+            value="Iniciar"
+          />
         </section>
         <section className={styles.imgSection}>
           <img

@@ -1,0 +1,217 @@
+.cantainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background-color: var(--grey-4);
+}
+
+.header__container {
+  width: 100%;
+  height: 88px;
+
+  background-color: #f8f9fa;
+  box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__align {
+  width: 983px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 20px;
+}
+
+.header__button {
+  width: 64px;
+  font-size: 14px;
+  background-color: var(--grey-3);
+  color: var(--grey-1);
+  font-weight: 600;
+}
+
+.header__button:hover {
+  background-color: var(--grey-1);
+  color: var(--grey-4);
+}
+
+.main__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 58px;
+
+  margin-top: 39px;
+  width: 983px;
+}
+
+.alignMain {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+.section__addResume {
+  border-radius: 4px;
+  width: 330px;
+  height: 280px;
+  border: 1px solid #dadada;
+  background-color: var(--grey-4);
+  display: flex;
+  flex-direction: column;
+  padding: 38px 24px;
+}
+
+.buttonAddToResume {
+  font-weight: 500;
+  width: 330px;
+}
+
+.title4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-left: 5px;
+}
+
+.inputDescript {
+  width: 314px;
+  height: 52px;
+
+  font-size: 16px;
+
+  padding-left: 16px;
+  margin-bottom: 15px;
+
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #e8e8e8;
+}
+
+.exampleDescript {
+  font-size: 12px;
+  color: #868e96;
+  margin-bottom: 25px;
+  margin-left: 5px;
+}
+
+.alignLabel {
+  display: flex;
+  gap: 135.16px;
+  margin-bottom: 9px;
+}
+
+.labelValue {
+  margin-left: 5px;
+}
+
+.alignInputs {
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.inputValue {
+  height: 48px;
+  width: 72px;
+
+  padding-left: 16px;
+  background-color: #e8e8e8;
+
+  border: none;
+  outline: none;
+
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.exchange {
+  width: 43px;
+  margin-right: 36px;
+
+  background-color: #e8e8e8;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.selectValue {
+  width: 160px;
+  height: 48px;
+  padding-left: 16px;
+  outline: none;
+  border: 1px solid #e8e8e8;
+  background-color: #e8e8e8;
+  border-radius: 8px;
+}
+
+.section__financialResume {
+  width: 595px;
+  height: 59px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.title1 {
+  font-size: 20px;
+  margin-bottom: 27px;
+  font-weight: 700;
+}
+
+.resumeList {
+  display: flex;
+  flex-direction: column;
+  gap: 33.65px;
+  width: 100%;
+}
+
+.resumeOff {
+  width: 100%;
+  background-color: #e8e8e8;
+  height: 87.35px;
+  border-radius: 4px;
+  display: flex;
+}
+
+.box1 {
+  height: 100%;
+  width: 4.01px;
+  margin-right: 11px;
+  background-color: rgb(192, 192, 192);
+}
+
+.boxContent {
+  width: 330.18px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 13.19px;
+}
+
+.box2 {
+  width: 100%;
+  height: 13.19px;
+
+  background-color: rgb(192, 192, 192);
+}
+
+.box3 {
+  width: 76.27px;
+  height: 13.19px;
+  background-color: rgb(192, 192, 192);
+}
