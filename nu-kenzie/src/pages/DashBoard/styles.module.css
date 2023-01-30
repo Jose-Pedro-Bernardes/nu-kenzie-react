@@ -44,6 +44,7 @@
 
   margin-top: 39px;
   width: 983px;
+  max-width: 100%;
 }
 
 .alignMain {
@@ -63,11 +64,13 @@
   display: flex;
   flex-direction: column;
   padding: 38px 24px;
+  max-width: 100%;
 }
 
 .buttonAddToResume {
   font-weight: 500;
   width: 330px;
+  max-width: 100%;
 }
 
 .title4 {
@@ -75,6 +78,7 @@
   font-weight: 600;
   margin-bottom: 12px;
   margin-left: 5px;
+  max-width: 100%;
 }
 
 .inputDescript {
@@ -89,7 +93,8 @@
   border: none;
   border-radius: 8px;
   outline: none;
-  background-color: #e8e8e8;
+  background-color: #f0f0f0;
+  max-width: 100%;
 }
 
 .exampleDescript {
@@ -97,21 +102,25 @@
   color: #868e96;
   margin-bottom: 25px;
   margin-left: 5px;
+  max-width: 100%;
 }
 
 .alignLabel {
   display: flex;
   gap: 135.16px;
   margin-bottom: 9px;
+  max-width: 100%;
 }
 
 .labelValue {
   margin-left: 5px;
+  max-width: 100%;
 }
 
 .alignInputs {
   margin-bottom: 40px;
   display: flex;
+  max-width: 100%;
 }
 
 .inputValue {
@@ -119,11 +128,11 @@
   width: 72px;
 
   padding-left: 16px;
-  background-color: #e8e8e8;
+  background-color: #f0f0f0;
 
   border: none;
   outline: none;
-
+  max-width: 100%;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -131,8 +140,8 @@
 .exchange {
   width: 43px;
   margin-right: 36px;
-
-  background-color: #e8e8e8;
+  max-width: 100%;
+  background-color: #f0f0f0;
 
   display: flex;
   justify-content: center;
@@ -147,9 +156,10 @@
   height: 48px;
   padding-left: 16px;
   outline: none;
-  border: 1px solid #e8e8e8;
-  background-color: #e8e8e8;
+  border: 1px solid #f0f0f0;
+  background-color: #f0f0f0;
   border-radius: 8px;
+  max-width: 100%;
 }
 
 .section__financialResume {
@@ -157,39 +167,46 @@
   height: 59px;
   display: flex;
   flex-direction: column;
+  max-width: 100%;
 }
 
 .title2 {
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 32px;
+  max-width: 100%;
 }
 .title1 {
   font-size: 20px;
+  margin: 0 20px;
   margin-bottom: 27px;
   font-weight: 700;
+  max-width: 100%;
 }
 
 .resumeList {
   display: flex;
   flex-direction: column;
-  gap: 33.65px;
   width: 100%;
 }
 
 .resumeOff {
-  width: 100%;
-  background-color: #e8e8e8;
+  max-width: 90%;
+  background-color: #f0f0f0;
   height: 87.35px;
   border-radius: 4px;
   display: flex;
+  margin: 0 20px;
+  margin-bottom: 33.65px;
+  width: 595px;
 }
 
 .box1 {
   height: 100%;
   width: 4.01px;
   margin-right: 11px;
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(222, 222, 222);
+  max-width: 100%;
 }
 
 .boxContent {
@@ -199,19 +216,35 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  max-width: 100%;
   gap: 13.19px;
 }
 
 .box2 {
   width: 100%;
   height: 13.19px;
-
-  background-color: rgb(192, 192, 192);
+  max-width: 100%;
+  background-color: rgb(222, 222, 222);
 }
 
 .box3 {
   width: 76.27px;
   height: 13.19px;
-  background-color: rgb(192, 192, 192);
+  background-color: rgb(222, 222, 222);
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .main__container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+  }
+  .title2 {
+    align-self: center;
+  }
+  .title1 {
+    align-self: center;
+  }
 }
