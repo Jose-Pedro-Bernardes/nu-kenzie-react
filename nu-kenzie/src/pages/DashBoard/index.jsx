@@ -69,19 +69,16 @@ export default function DashBoard({ setPage }) {
                     <div className={styles.box3}></div>
                   </div>
                 </li>
-                <li className={styles.resumeOff}>
-                  <div className={styles.box1}></div>
-                  <div className={styles.boxContent}>
-                    <div className={styles.box2}></div>
-                    <div className={styles.box3}></div>
+                <li className={styles.resume}>
+                  <div className={styles.boxGreen}></div>
+                  <div className={styles.boxText}>
+                    <p className={styles.resumeName}>Compra - Camisa Preta</p>
+                    <p className={styles.valueType}>Despesa</p>
                   </div>
-                </li>
-                <li className={styles.resumeOff}>
-                  <div className={styles.box1}></div>
-                  <div className={styles.boxContent}>
-                    <div className={styles.box2}></div>
-                    <div className={styles.box3}></div>
-                  </div>
+                  <p className={styles.valueEntrie}>R$ 1.660,00</p>
+                  <button className={styles.removeResumeBtn}>
+                    <img src="/src/assets/trash.svg" alt="Lixo" />
+                  </button>
                 </li>
               </ul>
             </section>
