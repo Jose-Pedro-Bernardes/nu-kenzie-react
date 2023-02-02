@@ -6,7 +6,7 @@ import { v4 as uuid } from "uuid";
 
 export default function DashBoard({ setPage }) {
   const [description, setDescription] = useState("");
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(0);
   const [type, setType] = useState("");
   const [entries, setEntries] = useState([]);
 
@@ -47,6 +47,9 @@ export default function DashBoard({ setPage }) {
 
     return `R$ ${entry.value},00`;
   }
+  function removeEntry(id) {
+    setEntries(entries.filter((entry) => entry.id !== id));
+  }
   return (
     <>
       <div className={styles.container}>
@@ -76,9 +79,7 @@ export default function DashBoard({ setPage }) {
                   <label className={styles.labelValue} htmlFor="valor">
                     Valor
                   </label>
-                  <label className={styles.labelTypeValue} htmlFor="select">
-                    Tipo de valor
-                  </label>
+                  <label htmlFor="select">Tipo de valor</label>
                 </div>
                 <div className={styles.alignInputs}>
                   <input
@@ -146,7 +147,10 @@ export default function DashBoard({ setPage }) {
                         <p className={styles.valueEntrie}>
                           {valueValid(entry)}
                         </p>
-                        <button className={styles.removeResumeBtn}>
+                        <button
+                          onClick={() => removeEntry(entry.id)}
+                          className={styles.removeResumeBtn}
+                        >
                           <img src="/src/assets/trash.svg" alt="Lixo" />
                         </button>
                       </li>
