@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./styles.module.css";
+import trash from "/src/assets/trash.svg";
 
 export default function Resume({ entry, valueValid, removeEntry }) {
   return (
@@ -14,7 +15,7 @@ export default function Resume({ entry, valueValid, removeEntry }) {
         onClick={() => removeEntry(entry.id)}
         className={styles.removeResumeBtn}
       >
-        <img src="/src/assets/trash.svg" alt="Lixo" />
+        <img src={trash} alt="Lixo" />
       </button>
     </li>
   );

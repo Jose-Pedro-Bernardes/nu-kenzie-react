@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import MainButton from "../../components/MainButton";
 import styles from "./styles.module.css";
+import nuKenzie from "/src/assets/nuKenzie.svg";
+import landingAsideImg from "/src/assets/landingAsideImg.svg";
 
 export default function NuKenzie({ setPage }) {
   return (
     <div className={styles.container}>
       <main className={styles.mainContainer}>
         <section className={styles.contentTextSection}>
-          <img
-            className={styles.logo}
-            src="/src/assets/nuKenzie.svg"
-            alt="Nu Kenzie Logo"
-          />
+          <img className={styles.logo} src={nuKenzie} alt="Nu Kenzie Logo" />
           <h1 className={styles.title1}>
             Centralize o controle das sua finanças
           </h1>
@@ -23,7 +21,7 @@ export default function NuKenzie({ setPage }) {
         </section>
         <section className={styles.imgSection}>
           <img
-            src="/src/assets/landingAsideImg.svg"
+            src={landingAsideImg}
             alt="Illustração de uma página com duas contas sendo pagas"
           />
         </section>
