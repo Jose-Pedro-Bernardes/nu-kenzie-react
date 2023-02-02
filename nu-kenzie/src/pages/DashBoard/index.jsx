@@ -72,7 +72,7 @@ export default function DashBoard({ setPage }) {
                   className={styles.inputDescript}
                   type="text"
                   placeholder="Digite aqui sua descrição"
-                  onChange={handleDescriptionChange}
+                  onInput={handleDescriptionChange}
                 />
                 <p className={styles.exampleDescript}>Ex: Compra de roupas</p>
                 <div className={styles.alignLabel}>
@@ -87,7 +87,7 @@ export default function DashBoard({ setPage }) {
                     id="valor"
                     type="text"
                     placeholder="1"
-                    onChange={handleValueChange}
+                    onInput={handleValueChange}
                   />
                   <p className={styles.exchange}>R$</p>
                   <select
