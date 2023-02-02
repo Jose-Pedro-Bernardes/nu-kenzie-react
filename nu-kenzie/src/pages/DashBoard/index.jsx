@@ -76,7 +76,9 @@ export default function DashBoard({ setPage }) {
                   <label className={styles.labelValue} htmlFor="valor">
                     Valor
                   </label>
-                  <label htmlFor="select">Tipo de valor</label>
+                  <label className={styles.labelTypeValue} htmlFor="select">
+                    Tipo de valor
+                  </label>
                 </div>
                 <div className={styles.alignInputs}>
                   <input
