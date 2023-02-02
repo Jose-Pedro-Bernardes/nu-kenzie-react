@@ -1,5 +1,6 @@
 import React from "react";
 import MainButton from "../../components/MainButton";
+import NoResume from "../../components/NoResume";
 import Resume from "../../components/Resume";
 import styles from "./styles.module.css";
 import { useState } from "react";
@@ -131,28 +132,9 @@ export default function DashBoard({ setPage }) {
               <ul className={styles.resumeList}>
                 {entries.length === 0 ? (
                   <>
-                    <li className={styles.resumeOff}>
-                      <div className={styles.box1}></div>
-                      <div className={styles.boxContent}>
-                        <div className={styles.box2}></div>
-                        <div className={styles.box3}></div>
-                      </div>
-                    </li>
-
-                    <li className={styles.resumeOff}>
-                      <div className={styles.box1}></div>
-                      <div className={styles.boxContent}>
-                        <div className={styles.box2}></div>
-                        <div className={styles.box3}></div>
-                      </div>
-                    </li>
-                    <li className={styles.resumeOff}>
-                      <div className={styles.box1}></div>
-                      <div className={styles.boxContent}>
-                        <div className={styles.box2}></div>
-                        <div className={styles.box3}></div>
-                      </div>
-                    </li>
+                    <NoResume />
+                    <NoResume />
+                    <NoResume />
                   </>
                 ) : (
                   entries.map((entry) => (
