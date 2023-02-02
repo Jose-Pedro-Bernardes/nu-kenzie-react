@@ -126,12 +126,13 @@ export default function DashBoard({ setPage }) {
           </section>
           <section className={styles.section__financialResume}>
             <h2 className={styles.title2}>Resumo financeiro</h2>
-            <h1 className={styles.title1}>
-              Você ainda não possui nenhum lançamento
-            </h1>
+
             <ul className={styles.resumeList}>
               {entries.length === 0 ? (
                 <>
+                  <h1 className={styles.title1}>
+                    Você ainda não possui nenhum lançamento
+                  </h1>
                   <NoResume />
                   <NoResume />
                   <NoResume />
@@ -139,6 +140,7 @@ export default function DashBoard({ setPage }) {
               ) : (
                 entries.map((entry) => (
                   <>
+                    <h1 className={styles.title1}>Resumo completo:</h1>
                     <Resume
                       key={entry.id}
                       entry={entry}
