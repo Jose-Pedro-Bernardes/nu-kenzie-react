@@ -50,6 +50,14 @@ export default function DashBoard({ setPage }) {
   function removeEntry(id) {
     setEntries(entries.filter((entry) => entry.id !== id));
   }
+
+  function sunValue() {
+    const sunValueResult = entries.reduce((valorAnterior, valorAtual) => {
+      return valorAtual.value + valorAnterior;
+    }, 0);
+
+    return sunValueResult;
+  }
   return (
     <>
       <div className={styles.container}>
@@ -87,7 +95,7 @@ export default function DashBoard({ setPage }) {
                     id="valor"
                     type="text"
                     placeholder="1"
-                    onInput={handleValueChange}
+                    onChange={handleValueChange}
                   />
                   <p className={styles.exchange}>R$</p>
                   <select
@@ -108,6 +116,10 @@ export default function DashBoard({ setPage }) {
                   onClicked={handleSubmit}
                 />
               </form>
+              <div className={styles.finalPrice}>
+                <h2 className={styles.titleFinalPrice}>Valor total: </h2>
+                <p className={styles.finalPriceValue}>R$ {sunValue()},00</p>
+              </div>
             </section>
             <section className={styles.section__financialResume}>
               <h2 className={styles.title2}>Resumo financeiro</h2>
@@ -125,6 +137,13 @@ export default function DashBoard({ setPage }) {
                       </div>
                     </li>
 
+                    <li className={styles.resumeOff}>
+                      <div className={styles.box1}></div>
+                      <div className={styles.boxContent}>
+                        <div className={styles.box2}></div>
+                        <div className={styles.box3}></div>
+                      </div>
+                    </li>
                     <li className={styles.resumeOff}>
                       <div className={styles.box1}></div>
                       <div className={styles.boxContent}>
