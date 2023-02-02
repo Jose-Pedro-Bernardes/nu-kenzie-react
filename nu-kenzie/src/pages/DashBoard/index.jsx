@@ -61,98 +61,96 @@ export default function DashBoard({ setPage }) {
     return sunValueResult;
   }
   return (
-    <>
-      <div className={styles.container}>
-        <header className={styles.header__container}>
-          <div className={styles.header__align}>
-            <img src="/src/assets/nuKenzieDash.svg" alt="Nu Kenzie Logo" />
-            <MainButton
-              onClicked={() => setPage("LandingPage")}
-              newClass={styles.header__button}
-              value="Início"
-            />
-          </div>
-        </header>
-        <div className={styles.alignMain}>
-          <main className={styles.main__container}>
-            <section className={styles.section__addResume}>
-              <h4 className={styles.title4}>Descrição</h4>
-              <form>
-                <input
-                  className={styles.inputDescript}
-                  type="text"
-                  placeholder="Digite aqui sua descrição"
-                  onInput={handleDescriptionChange}
-                />
-                <p className={styles.exampleDescript}>Ex: Compra de roupas</p>
-                <div className={styles.alignLabel}>
-                  <label className={styles.labelValue} htmlFor="valor">
-                    Valor
-                  </label>
-                  <label htmlFor="select">Tipo de valor</label>
-                </div>
-                <div className={styles.alignInputs}>
-                  <input
-                    className={styles.inputValue}
-                    id="valor"
-                    type="text"
-                    placeholder="1"
-                    onChange={handleValueChange}
-                  />
-                  <p className={styles.exchange}>R$</p>
-                  <select
-                    className={styles.selectValue}
-                    name="selectValue"
-                    id="select"
-                    onChange={handleTypeChange}
-                    value={type}
-                  >
-                    <option value="select">Selecione o tipo</option>
-                    <option value="Entrada">Entrada</option>
-                    <option value="Despesa">Despesa</option>
-                  </select>
-                </div>
-                <MainButton
-                  value="Inserir Valor"
-                  newClass={styles.buttonAddToResume}
-                  onClicked={handleSubmit}
-                  type="submit"
-                />
-              </form>
-              <div className={styles.finalPrice}>
-                <h2 className={styles.titleFinalPrice}>Valor total: </h2>
-                <p className={styles.finalPriceValue}>R$ {sunValue()},00</p>
-              </div>
-            </section>
-            <section className={styles.section__financialResume}>
-              <h2 className={styles.title2}>Resumo financeiro</h2>
-              <h1 className={styles.title1}>
-                Você ainda não possui nenhum lançamento
-              </h1>
-              <ul className={styles.resumeList}>
-                {entries.length === 0 ? (
-                  <>
-                    <NoResume />
-                    <NoResume />
-                    <NoResume />
-                  </>
-                ) : (
-                  entries.map((entry) => (
-                    <>
-                      <Resume
-                        key={entry.id}
-                        entry={entry}
-                        valueValid={valueValid}
-                        removeEntry={removeEntry}
-                      />
-                    </>
-                  ))
-                )}
-              </ul>
-            </section>
-          </main>
+    <div className={styles.container}>
+      <header className={styles.header__container}>
+        <div className={styles.header__align}>
+          <img src="/src/assets/nuKenzieDash.svg" alt="Nu Kenzie Logo" />
+          <MainButton
+            onClicked={() => setPage("LandingPage")}
+            newClass={styles.header__button}
+            value="Início"
+          />
         </div>
+      </header>
+      <div className={styles.alignMain}>
+        <main className={styles.main__container}>
+          <section className={styles.section__addResume}>
+            <h4 className={styles.title4}>Descrição</h4>
+            <form>
+              <input
+                className={styles.inputDescript}
+                type="text"
+                placeholder="Digite aqui sua descrição"
+                onInput={handleDescriptionChange}
+              />
+              <p className={styles.exampleDescript}>Ex: Compra de roupas</p>
+              <div className={styles.alignLabel}>
+                <label className={styles.labelValue} htmlFor="valor">
+                  Valor
+                </label>
+                <label htmlFor="select">Tipo de valor</label>
+              </div>
+              <div className={styles.alignInputs}>
+                <input
+                  className={styles.inputValue}
+                  id="valor"
+                  type="text"
+                  placeholder="1"
+                  onChange={handleValueChange}
+                />
+                <p className={styles.exchange}>R$</p>
+                <select
+                  className={styles.selectValue}
+                  name="selectValue"
+                  id="select"
+                  onChange={handleTypeChange}
+                  value={type}
+                >
+                  <option value="select">Selecione o tipo</option>
+                  <option value="Entrada">Entrada</option>
+                  <option value="Despesa">Despesa</option>
+                </select>
+              </div>
+              <MainButton
+                value="Inserir Valor"
+                newClass={styles.buttonAddToResume}
+                onClicked={handleSubmit}
+                type="submit"
+              />
+            </form>
+            <div className={styles.finalPrice}>
+              <h2 className={styles.titleFinalPrice}>Valor total: </h2>
+              <p className={styles.finalPriceValue}>R$ {sunValue()},00</p>
+            </div>
+          </section>
+          <section className={styles.section__financialResume}>
+            <h2 className={styles.title2}>Resumo financeiro</h2>
+            <h1 className={styles.title1}>
+              Você ainda não possui nenhum lançamento
+            </h1>
+            <ul className={styles.resumeList}>
+              {entries.length === 0 ? (
+                <>
+                  <NoResume />
+                  <NoResume />
+                  <NoResume />
+                </>
+              ) : (
+                entries.map((entry) => (
+                  <>
+                    <Resume
+                      key={entry.id}
+                      entry={entry}
+                      valueValid={valueValid}
+                      removeEntry={removeEntry}
+                    />
+                  </>
+                ))
+              )}
+            </ul>
+          </section>
+        </main>
       </div>
-    </>
+    </div>
   );
 }
