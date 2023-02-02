@@ -1,5 +1,6 @@
 import React from "react";
 import MainButton from "../../components/MainButton";
+import Resume from "../../components/Resume";
 import styles from "./styles.module.css";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
@@ -17,7 +18,7 @@ export default function DashBoard({ setPage }) {
       return alert("Descrição inválida.");
     }
 
-    if (type == "") {
+    if (type === "") {
       return alert("Selecione o tipo de resumo.");
     }
 
@@ -114,6 +115,7 @@ export default function DashBoard({ setPage }) {
                   value="Inserir Valor"
                   newClass={styles.buttonAddToResume}
                   onClicked={handleSubmit}
+                  type="submit"
                 />
               </form>
               <div className={styles.finalPrice}>
@@ -155,24 +157,12 @@ export default function DashBoard({ setPage }) {
                 ) : (
                   entries.map((entry) => (
                     <>
-                      <li key={entry.id} className={styles.resume}>
-                        <div className={styles.boxGreen}></div>
-                        <div className={styles.boxText}>
-                          <p className={styles.resumeName}>
-                            {entry.description}
-                          </p>
-                          <p className={styles.valueType}>{entry.type}</p>
-                        </div>
-                        <p className={styles.valueEntrie}>
-                          {valueValid(entry)}
-                        </p>
-                        <button
-                          onClick={() => removeEntry(entry.id)}
-                          className={styles.removeResumeBtn}
-                        >
-                          <img src="/src/assets/trash.svg" alt="Lixo" />
-                        </button>
-                      </li>
+                      <Resume
+                        key={entry.id}
+                        entry={entry}
+                        valueValid={valueValid}
+                        removeEntry={removeEntry}
+                      />
                     </>
                   ))
                 )}
