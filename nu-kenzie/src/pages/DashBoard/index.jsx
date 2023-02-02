@@ -56,7 +56,7 @@ export default function DashBoard({ setPage }) {
 
   function sunValue() {
     const sunValueResult = entries.reduce((valorAnterior, valorAtual) => {
-      return valorAtual.value + valorAnterior;
+      return Number(valorAtual.value) + valorAnterior;
     }, 0);
 
     return sunValueResult;
