@@ -119,10 +119,18 @@ export default function DashBoard({ setPage }) {
                 type="submit"
               />
             </form>
-            <div className={styles.finalPrice}>
-              <h2 className={styles.titleFinalPrice}>Valor total: </h2>
-              <p className={styles.finalPriceValue}>R$ {sunValue()},00</p>
-            </div>
+            {entries.length === 0 ? (
+              <div className={styles.noEntriesValue}>
+                <h4>...</h4>
+              </div>
+            ) : (
+              <>
+                <div className={styles.finalPrice}>
+                  <h2 className={styles.titleFinalPrice}>Valor total: </h2>
+                  <p className={styles.finalPriceValue}>R$ {sunValue()},00</p>
+                </div>
+              </>
+            )}
           </section>
           <section className={styles.section__financialResume}>
             <h2 className={styles.title2}>Resumo financeiro</h2>
@@ -140,7 +148,6 @@ export default function DashBoard({ setPage }) {
               ) : (
                 entries.map((entry) => (
                   <>
-                    <h1 className={styles.title1}>Resumo completo:</h1>
                     <Resume
                       key={entry.id}
                       entry={entry}
