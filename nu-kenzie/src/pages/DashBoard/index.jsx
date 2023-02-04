@@ -11,7 +11,7 @@ import Form from "../../components/Form";
 
 export default function DashBoard({ setPage }) {
   const [description, setDescription] = useState("");
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState("");
   const [type, setType] = useState("");
   const [entries, setEntries] = useState([]);
 
@@ -28,7 +28,7 @@ export default function DashBoard({ setPage }) {
 
     setEntries([...entries, { id: uuid(), description, value, type }]);
     setDescription("");
-    setValue(0);
+    setValue("");
     setType("");
   }
 
@@ -44,15 +44,39 @@ export default function DashBoard({ setPage }) {
     setType(event.target.value);
   }
 
+  function sunValue() {
+    const filterExpenses = entries.filter((entry) => {
+      return entry.type === "Despesa";
+    });
+
+    const sunValueExpensesResult = filterExpenses.reduce(
+      (valorAnterior, valorAtual) => {
+        return Number(valorAnterior) + Number(valorAtual.value);
+      },
+      0
+    );
+
+    const filterEntries = entries.filter((entry) => {
+      return entry.type === "Entrada";
+    });
+
+    const sunValueEntriesResult = filterEntries.reduce(
+      (valorAnterior, valorAtual) => {
+        return Number(valorAnterior) + Number(valorAtual.value);
+      },
+      0
+    );
+
+    return `${sunValueEntriesResult - sunValueExpensesResult}`;
+  }
+
   function valueValid(entry) {
     const valueAsNumber = Number(value);
     if (isNaN(valueAsNumber)) {
       return alert("O valor precisa ser um número válido");
     }
 
-    if (entry.type === "Despesa") {
-      return `R$  -${entry.value},00`;
-    }
+    return `R$ ${sunValue()},00`;
   }
   function removeEntry(id) {
     setEntries(entries.filter((entry) => entry.id !== id));
@@ -76,6 +100,9 @@ export default function DashBoard({ setPage }) {
               handleValueChange={handleValueChange}
               handleTypeChange={handleTypeChange}
               handleSubmit={handleSubmit}
+              description={description}
+              value={value}
+              type={type}
             />
             <TotalValue entries={entries} />
           </section>

@@ -17,7 +17,7 @@ export default function ({
         <input
           className={styles.inputDescript}
           type="text"
-          value={value}
+          value={description}
           placeholder="Digite aqui sua descrição"
           onInput={handleDescriptionChange}
         />
@@ -33,9 +33,9 @@ export default function ({
             className={styles.inputValue}
             id="valor"
             type="text"
-            value={description}
             placeholder="1"
             onChange={handleValueChange}
+            value={value}
           />
           <p className={styles.exchange}>R$</p>
           <select
