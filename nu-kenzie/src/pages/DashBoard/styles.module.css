@@ -4,6 +4,18 @@
   width: 100vw;
   background-color: var(--grey-4);
 }
+.header__button {
+  width: 64px;
+  font-size: 14px;
+  background-color: var(--grey-3);
+  color: var(--grey-1);
+  font-weight: 600;
+}
+
+.header__button:hover {
+  background-color: var(--grey-1);
+  color: var(--grey-4);
+}
 
 .main__container {
   display: flex;
