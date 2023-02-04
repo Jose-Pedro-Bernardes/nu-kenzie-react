@@ -204,6 +204,14 @@
   color: var(--color-primary);
 }
 
+.valueEntrie {
+  font-size: 12px;
+  font-weight: 400;
+  position: absolute;
+  top: 18px;
+  right: 100px;
+}
+
 @media (max-width: 1024px) {
   .main__container {
     flex-direction: column;

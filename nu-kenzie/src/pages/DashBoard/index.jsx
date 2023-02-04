@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
 import styles from "./styles.module.css";
 import HeaderContainer from "../../components/HeaderContainer";
@@ -20,7 +20,7 @@ export default function DashBoard({ setPage }) {
       return alert("Descrição inválida.");
     }
 
-    if (type === "") {
+    if (type === "" || type === "select") {
       return alert("Selecione o tipo de resumo.");
     }
 
@@ -48,19 +48,40 @@ export default function DashBoard({ setPage }) {
       return alert("O valor precisa ser um número válido");
     }
 
-    return `R$ ${entry.value},00`;
+    if (entry.type === "Despesa") {
+      return `R$  -${entry.value},00`;
+    }
   }
   function removeEntry(id) {
     setEntries(entries.filter((entry) => entry.id !== id));
   }
 
   function sunValue() {
-    const sunValueResult = entries.reduce((valorAnterior, valorAtual) => {
-      return Number(valorAtual.value) + valorAnterior;
-    }, 0);
+    const filterExpenses = entries.filter((entry) => {
+      return entry.type === "Despesa";
+    });
 
-    return sunValueResult;
+    const sunValueExpensesResult = filterExpenses.reduce(
+      (valorAnterior, valorAtual) => {
+        return Number(valorAnterior) + Number(valorAtual.value);
+      },
+      0
+    );
+
+    const filterEntries = entries.filter((entry) => {
+      return entry.type === "Entrada";
+    });
+
+    const sunValueEntriesResult = filterEntries.reduce(
+      (valorAnterior, valorAtual) => {
+        return Number(valorAnterior) + Number(valorAtual.value);
+      },
+      0
+    );
+
+    return `${sunValueEntriesResult - sunValueExpensesResult}`;
   }
+
   return (
     <div className={styles.container}>
       <HeaderContainer>
@@ -143,16 +164,27 @@ export default function DashBoard({ setPage }) {
                   <NoResume />
                 </>
               ) : (
-                entries.map((entry) => (
-                  <>
-                    <Resume
-                      key={entry.id}
-                      entry={entry}
-                      valueValid={valueValid}
-                      removeEntry={removeEntry}
-                    />
-                  </>
-                ))
+                <div>
+                  {entries.map((entry) => (
+                    <>
+                      <Resume
+                        key={entry.id}
+                        entry={entry}
+                        removeEntry={removeEntry}
+                      >
+                        {entry.type === "Despesa" ? (
+                          <p className={styles.valueEntrie}>
+                            {valueValid(entry)}
+                          </p>
+                        ) : (
+                          <p className={styles.valueEntrie}>
+                            R$ {entry.value},00
+                          </p>
+                        )}
+                      </Resume>
+                    </>
+                  ))}
+                </div>
               )}
             </ul>
           </section>

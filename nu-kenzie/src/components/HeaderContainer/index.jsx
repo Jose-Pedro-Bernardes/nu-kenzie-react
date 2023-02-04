@@ -1,7 +1,6 @@
 import React from "react";
 import NuKenzieDash from "/src/assets/nuKenzieDash.svg";
 import styles from "./styles.module.css";
-import MainButton from "../MainButton";
 
 export default function HeaderContainer({ children }) {
   return (
