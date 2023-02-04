@@ -164,27 +164,18 @@ export default function DashBoard({ setPage }) {
                   <NoResume />
                 </>
               ) : (
-                <div>
+                <>
                   {entries.map((entry) => (
                     <>
                       <Resume
                         key={entry.id}
                         entry={entry}
+                        valueValid={valueValid(entry)}
                         removeEntry={removeEntry}
-                      >
-                        {entry.type === "Despesa" ? (
-                          <p className={styles.valueEntrie}>
-                            {valueValid(entry)}
-                          </p>
-                        ) : (
-                          <p className={styles.valueEntrie}>
-                            R$ {entry.value},00
-                          </p>
-                        )}
-                      </Resume>
+                      ></Resume>
                     </>
                   ))}
-                </div>
+                </>
               )}
             </ul>
           </section>

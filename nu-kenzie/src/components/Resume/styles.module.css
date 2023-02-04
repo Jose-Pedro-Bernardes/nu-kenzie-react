@@ -65,3 +65,11 @@
 .removeResumeBtn:hover {
   background-color: #cecece;
 }
+
+.box1 {
+  height: 100%;
+  width: 4.01px;
+  margin-right: 11px;
+  background-color: rgb(222, 222, 222);
+  max-width: 100%;
+}
