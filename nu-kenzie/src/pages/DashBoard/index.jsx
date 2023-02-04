@@ -6,6 +6,7 @@ import HeaderContainer from "../../components/HeaderContainer";
 import MainButton from "../../components/MainButton";
 import NoResume from "../../components/NoResume";
 import Resume from "../../components/Resume";
+import TotalValue from "../../components/TotalValue";
 
 export default function DashBoard({ setPage }) {
   const [description, setDescription] = useState("");
@@ -54,32 +55,6 @@ export default function DashBoard({ setPage }) {
   }
   function removeEntry(id) {
     setEntries(entries.filter((entry) => entry.id !== id));
-  }
-
-  function sunValue() {
-    const filterExpenses = entries.filter((entry) => {
-      return entry.type === "Despesa";
-    });
-
-    const sunValueExpensesResult = filterExpenses.reduce(
-      (valorAnterior, valorAtual) => {
-        return Number(valorAnterior) + Number(valorAtual.value);
-      },
-      0
-    );
-
-    const filterEntries = entries.filter((entry) => {
-      return entry.type === "Entrada";
-    });
-
-    const sunValueEntriesResult = filterEntries.reduce(
-      (valorAnterior, valorAtual) => {
-        return Number(valorAnterior) + Number(valorAtual.value);
-      },
-      0
-    );
-
-    return `${sunValueEntriesResult - sunValueExpensesResult}`;
   }
 
   return (
@@ -137,18 +112,7 @@ export default function DashBoard({ setPage }) {
                 type="submit"
               />
             </form>
-            {entries.length === 0 ? (
-              <div className={styles.noEntriesValue}>
-                <h4>...</h4>
-              </div>
-            ) : (
-              <>
-                <div className={styles.finalPrice}>
-                  <h2 className={styles.titleFinalPrice}>Valor total: </h2>
-                  <p className={styles.finalPriceValue}>R$ {sunValue()},00</p>
-                </div>
-              </>
-            )}
+            <TotalValue entries={entries} />
           </section>
           <section className={styles.section__financialResume}>
             <h2 className={styles.title2}>Resumo financeiro</h2>
