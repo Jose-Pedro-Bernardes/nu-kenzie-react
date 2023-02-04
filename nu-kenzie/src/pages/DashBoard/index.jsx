@@ -63,7 +63,13 @@ export default function DashBoard({ setPage }) {
   }
   return (
     <div className={styles.container}>
-      <HeaderContainer></HeaderContainer>
+      <HeaderContainer>
+        <MainButton
+          onClicked={() => setPage("LandingPage")}
+          newClass={styles.header__button}
+          value="Início"
+        />
+      </HeaderContainer>
       <div className={styles.alignMain}>
         <main className={styles.main__container}>
           <section className={styles.section__addResume}>
