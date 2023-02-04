@@ -2,10 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
 import styles from "./styles.module.css";
+import HeaderContainer from "../../components/HeaderContainer";
 import MainButton from "../../components/MainButton";
 import NoResume from "../../components/NoResume";
 import Resume from "../../components/Resume";
-import NuKenzieDash from "/src/assets/nuKenzieDash.svg";
 
 export default function DashBoard({ setPage }) {
   const [description, setDescription] = useState("");
@@ -63,16 +63,7 @@ export default function DashBoard({ setPage }) {
   }
   return (
     <div className={styles.container}>
-      <header className={styles.header__container}>
-        <div className={styles.header__align}>
-          <img src={NuKenzieDash} alt="Nu Kenzie Logo" />
-          <MainButton
-            onClicked={() => setPage("LandingPage")}
-            newClass={styles.header__button}
-            value="Início"
-          />
-        </div>
-      </header>
+      <HeaderContainer></HeaderContainer>
       <div className={styles.alignMain}>
         <main className={styles.main__container}>
           <section className={styles.section__addResume}>
