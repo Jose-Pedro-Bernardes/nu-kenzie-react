@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import trash from "/src/assets/trash.svg";
 
-export default function Resume({ entry, valueValid, removeEntry }) {
+export default function Resume({ entry, removeEntry }) {
   return (
     <>
       <li className={styles.resume}>
@@ -17,7 +17,7 @@ export default function Resume({ entry, valueValid, removeEntry }) {
         </div>
 
         {entry.type === "Despesa" ? (
-          <p className={styles.valueEntrie}>{valueValid}</p>
+          <p className={styles.valueEntrie}>R$ -{entry.value},00</p>
         ) : (
           <p className={styles.valueEntrie}>R$ {entry.value},00</p>
         )}

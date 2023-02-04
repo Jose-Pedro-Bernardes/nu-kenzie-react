@@ -26,6 +26,11 @@ export default function DashBoard({ setPage }) {
       return alert("Selecione o tipo de resumo.");
     }
 
+    const valueAsNumber = Number(value);
+    if (isNaN(valueAsNumber) || value === "" || value == 0) {
+      return alert("O valor precisa ser um número válido");
+    }
+
     setEntries([...entries, { id: uuid(), description, value, type }]);
     setDescription("");
     setValue("");
@@ -44,40 +49,6 @@ export default function DashBoard({ setPage }) {
     setType(event.target.value);
   }
 
-  function sunValue() {
-    const filterExpenses = entries.filter((entry) => {
-      return entry.type === "Despesa";
-    });
-
-    const sunValueExpensesResult = filterExpenses.reduce(
-      (valorAnterior, valorAtual) => {
-        return Number(valorAnterior) + Number(valorAtual.value);
-      },
-      0
-    );
-
-    const filterEntries = entries.filter((entry) => {
-      return entry.type === "Entrada";
-    });
-
-    const sunValueEntriesResult = filterEntries.reduce(
-      (valorAnterior, valorAtual) => {
-        return Number(valorAnterior) + Number(valorAtual.value);
-      },
-      0
-    );
-
-    return `${sunValueEntriesResult - sunValueExpensesResult}`;
-  }
-
-  function valueValid(entry) {
-    const valueAsNumber = Number(value);
-    if (isNaN(valueAsNumber)) {
-      return alert("O valor precisa ser um número válido");
-    }
-
-    return `R$ ${sunValue()},00`;
-  }
   function removeEntry(id) {
     setEntries(entries.filter((entry) => entry.id !== id));
   }
@@ -126,7 +97,6 @@ export default function DashBoard({ setPage }) {
                       <Resume
                         key={entry.id}
                         entry={entry}
-                        valueValid={valueValid(entry)}
                         removeEntry={removeEntry}
                       ></Resume>
                     </>

@@ -1,0 +1,13 @@
+.title1 {
+  font-size: 20px;
+  margin: 0 20px;
+  margin-bottom: 27px;
+  font-weight: 700;
+  max-width: 100%;
+}
+
+.resumeList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

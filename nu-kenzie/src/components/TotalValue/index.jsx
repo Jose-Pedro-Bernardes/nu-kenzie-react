@@ -1,32 +1,8 @@
 import React from "react";
 import styles from "./styles.module.css";
+import SunValue from "../SunValue";
 
 export default function TotalValue({ entries }) {
-  function sunValue() {
-    const filterExpenses = entries.filter((entry) => {
-      return entry.type === "Despesa";
-    });
-
-    const sunValueExpensesResult = filterExpenses.reduce(
-      (valorAnterior, valorAtual) => {
-        return Number(valorAnterior) + Number(valorAtual.value);
-      },
-      0
-    );
-
-    const filterEntries = entries.filter((entry) => {
-      return entry.type === "Entrada";
-    });
-
-    const sunValueEntriesResult = filterEntries.reduce(
-      (valorAnterior, valorAtual) => {
-        return Number(valorAnterior) + Number(valorAtual.value);
-      },
-      0
-    );
-
-    return `${sunValueEntriesResult - sunValueExpensesResult}`;
-  }
   return (
     <>
       {entries.length === 0 ? (
@@ -37,7 +13,7 @@ export default function TotalValue({ entries }) {
         <>
           <div className={styles.finalPrice}>
             <h2 className={styles.titleFinalPrice}>Valor total: </h2>
-            <p className={styles.finalPriceValue}>R$ {sunValue()},00</p>
+            <p className={styles.finalPriceValue}>R$ {SunValue(entries)},00</p>
           </div>
         </>
       )}
