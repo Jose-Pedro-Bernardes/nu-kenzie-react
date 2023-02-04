@@ -4,10 +4,9 @@ import { v4 as uuid } from "uuid";
 import styles from "./styles.module.css";
 import HeaderContainer from "../../components/HeaderContainer";
 import MainButton from "../../components/MainButton";
-import NoResume from "../../components/NoResume";
-import Resume from "../../components/Resume";
 import TotalValue from "../../components/TotalValue";
 import Form from "../../components/Form";
+import CardList from "../../components/CardList";
 
 export default function DashBoard({ setPage }) {
   const [description, setDescription] = useState("");
@@ -80,30 +79,7 @@ export default function DashBoard({ setPage }) {
           <section className={styles.section__financialResume}>
             <h2 className={styles.title2}>Resumo financeiro</h2>
 
-            <ul className={styles.resumeList}>
-              {entries.length === 0 ? (
-                <>
-                  <h1 className={styles.title1}>
-                    Você ainda não possui nenhum lançamento
-                  </h1>
-                  <NoResume />
-                  <NoResume />
-                  <NoResume />
-                </>
-              ) : (
-                <>
-                  {entries.map((entry) => (
-                    <>
-                      <Resume
-                        key={entry.id}
-                        entry={entry}
-                        removeEntry={removeEntry}
-                      ></Resume>
-                    </>
-                  ))}
-                </>
-              )}
-            </ul>
+            <CardList entries={entries} removeEntry={removeEntry} />
           </section>
         </main>
       </div>
