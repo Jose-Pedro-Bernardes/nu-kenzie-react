@@ -1,0 +1,91 @@
+.buttonAddToResume {
+  font-weight: 500;
+  width: 330px;
+  max-width: 100%;
+}
+
+.inputDescript {
+  width: 314px;
+  height: 52px;
+
+  font-size: 16px;
+
+  padding-left: 16px;
+  margin-bottom: 15px;
+
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f0f0f0;
+  max-width: 100%;
+}
+
+.exampleDescript {
+  font-size: 12px;
+  color: #868e96;
+  margin-bottom: 25px;
+  margin-left: 5px;
+  max-width: 100%;
+}
+
+.alignLabel {
+  display: flex;
+  gap: 135.16px;
+  margin-bottom: 9px;
+  max-width: 100%;
+  font-size: 12px;
+}
+
+.labelValue {
+  margin-left: 5px;
+  max-width: 100%;
+}
+
+.alignInputs {
+  margin-bottom: 40px;
+  display: flex;
+  max-width: 100%;
+}
+
+.inputValue {
+  height: 48px;
+  width: 72px;
+
+  padding-left: 16px;
+  background-color: #f0f0f0;
+
+  border: none;
+  outline: none;
+  max-width: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.exchange {
+  width: 43px;
+  margin-right: 36px;
+  max-width: 100%;
+  background-color: #f0f0f0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+
+  color: #868e96;
+}
+
+.selectValue {
+  width: 160px;
+  height: 48px;
+  padding-left: 16px;
+  outline: none;
+  border: 1px solid #f0f0f0;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  max-width: 100%;
+}

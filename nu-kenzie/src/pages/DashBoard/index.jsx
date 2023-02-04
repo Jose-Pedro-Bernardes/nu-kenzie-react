@@ -7,6 +7,7 @@ import MainButton from "../../components/MainButton";
 import NoResume from "../../components/NoResume";
 import Resume from "../../components/Resume";
 import TotalValue from "../../components/TotalValue";
+import Form from "../../components/Form";
 
 export default function DashBoard({ setPage }) {
   const [description, setDescription] = useState("");
@@ -70,48 +71,12 @@ export default function DashBoard({ setPage }) {
         <main className={styles.main__container}>
           <section className={styles.section__addResume}>
             <h4 className={styles.title4}>Descrição</h4>
-            <form>
-              <input
-                className={styles.inputDescript}
-                type="text"
-                placeholder="Digite aqui sua descrição"
-                onInput={handleDescriptionChange}
-              />
-              <p className={styles.exampleDescript}>Ex: Compra de roupas</p>
-              <div className={styles.alignLabel}>
-                <label className={styles.labelValue} htmlFor="valor">
-                  Valor
-                </label>
-                <label htmlFor="select">Tipo de valor</label>
-              </div>
-              <div className={styles.alignInputs}>
-                <input
-                  className={styles.inputValue}
-                  id="valor"
-                  type="text"
-                  placeholder="1"
-                  onChange={handleValueChange}
-                />
-                <p className={styles.exchange}>R$</p>
-                <select
-                  className={styles.selectValue}
-                  name="selectValue"
-                  id="select"
-                  onChange={handleTypeChange}
-                  value={type}
-                >
-                  <option value="select">Selecione o tipo</option>
-                  <option value="Entrada">Entrada</option>
-                  <option value="Despesa">Despesa</option>
-                </select>
-              </div>
-              <MainButton
-                value="Inserir Valor"
-                newClass={styles.buttonAddToResume}
-                onClicked={handleSubmit}
-                type="submit"
-              />
-            </form>
+            <Form
+              handleDescriptionChange={handleDescriptionChange}
+              handleValueChange={handleValueChange}
+              handleTypeChange={handleTypeChange}
+              handleSubmit={handleSubmit}
+            />
             <TotalValue entries={entries} />
           </section>
           <section className={styles.section__financialResume}>
