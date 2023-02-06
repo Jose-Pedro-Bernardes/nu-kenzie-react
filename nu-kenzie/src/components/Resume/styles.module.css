@@ -73,3 +73,31 @@
   background-color: rgb(222, 222, 222);
   max-width: 100%;
 }
+
+@media (max-width: 575px) {
+  .resume {
+    height: 160px;
+    width: 400px;
+    align-self: center;
+  }
+  .boxText {
+    margin-top: 20px;
+    justify-content: flex-start;
+    gap: 20px;
+    height: 100px;
+  }
+
+  .valueEntrie {
+    height: 16px;
+    width: 100%;
+    position: absolute;
+    left: 15px;
+    top: 90px;
+  }
+
+  .removeResumeBtn {
+    position: absolute;
+    left: 15px;
+    top: 120px;
+  }
+}
